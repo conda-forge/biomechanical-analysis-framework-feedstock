@@ -140,11 +140,8 @@ outputs:
           - baf_kpi
         pip_check: true
         python_version: ${{ python_min }}.*
-     - requirements:
-         run:
-           - pip
-       script:
-         - baf-kpi-analyzer --help
+      - script:
+          - baf-kpi-analyzer --help
 
   - package:
       name: ${{ name }}

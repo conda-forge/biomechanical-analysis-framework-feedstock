@@ -28,10 +28,11 @@ cmake ${CMAKE_ARGS} -GNinja .. \
 ninja -v
 cmake --build . --config Release --target install
 
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
+# At the moment the baf python bindings do not have any test, re-enable this if they are added
+# if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
 
   # Tests are not installed, so we run them during the build
   # We run them directly via pytest so we detect if we are not compiling some required components
-  cd ..
-  pytest -v
-fi
+  #cd ..
+  #pytest -v
+# fi

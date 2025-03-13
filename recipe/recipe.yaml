@@ -136,10 +136,10 @@ outputs:
         - resolve-robotics-uri-py
     tests:
       - python:
-        imports:
-          - baf_kpi
-        pip_check: true
-        python_version: ${{ python_min }}.*
+          imports:
+            - baf_kpi
+          pip_check: true
+          python_version: ${{ python_min }}.*
       - script:
           - baf-kpi-analyzer --help
 
@@ -167,6 +167,12 @@ about:
   license: "BSD-3-Clause"
   license_file: "LICENSE"
   summary: "Set of C++ libraries that can be used to estimate a human kinematics and dynamics quantities."
+  description: |
+    This feedstock packages the biomechanical-analysis-framework set of libraries and it provides the following outputs:
+      * `libbiomechanical-analysis-framework` : Package that contains the C++ libraries.
+      * `biomechanical-analysis-framework-python` : Package that contains the Python bindings of the C++ libraries.
+      * `biomechanical-analysis-framework-kpi` : Package that contains the pure Python package containing the code to compute biomechanical KPIs.
+      * `biomechanical-analysis-framework` : Meta-package that install all the aforementioned packages.
 
 extra:
   feedstock-name: biomechanical-analysis-framework

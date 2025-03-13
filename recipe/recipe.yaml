@@ -107,9 +107,7 @@ outputs:
   - package:
       name: ${{ kpi_name }}
     build:
-      noarch: python
-      # This is a noarch python built as part of a non-noarch package, so we need to only built it on one platform
-      skip: not (linux and x86_64)
+      # This should be noarch, but it is just easier to package it as no-noarch  package as it is a dependency on a no-noarch package
       script: ${{ PYTHON }} -m pip install --no-deps --no-build-isolation ./baf_kpi -vv
       python:
         entry_points:

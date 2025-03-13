@@ -36,8 +36,7 @@ outputs:
       host:
         - if: linux
           then: libgl-devel
-        # Workaround for https://github.com/conda-forge/staged-recipes/pull/29395#issuecomment-2713675868
-        - spdlog 1.15.*
+        - spdlog
         - manif
         - eigen
         - idyntree

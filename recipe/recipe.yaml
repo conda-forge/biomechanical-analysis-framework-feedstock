@@ -144,7 +144,6 @@ outputs:
           imports:
             - baf_kpi
           pip_check: true
-          python_version: ${{ python_min }}.*
 
   - package:
       name: ${{ name }}

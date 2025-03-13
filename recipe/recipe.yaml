@@ -120,15 +120,15 @@ outputs:
         - if: build_platform != target_platform
           then:
             - cross-python_${{ target_platform }}
-            - python  ${{ python_min }}.*
+            - python
       host:
-        - python ${{ python_min }}.*
+        - python
         - wheel
         - setuptools >=45
         - setuptools-scm >=6.2
         - pip
       run:
-        - python >=${{ python_min }}
+        - python
         - numpy
         - matplotlib-base
         - pandas

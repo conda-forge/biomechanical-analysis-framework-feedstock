@@ -1,8 +1,9 @@
 context:
   name: "biomechanical-analysis-framework"
   cxx_name: "libbiomechanical-analysis-framework"
+  python_name: "biomechanical-analysis-framework-python"
+  kpi_name: "biomechanical-analysis-framework-kpi"
   version: "0.2.0"
-
 
 recipe:
   name: ${{ name }}
@@ -34,7 +35,9 @@ outputs:
         - pkg-config
         - ninja
         # Workaround for https://github.com/conda-forge/qt-main-feedstock/issues/273
-        - qt6-main
+        - if: build_platform != target_platform
+          then:
+            - qt6-main
       host:
         - if: linux
           then: libgl-devel
@@ -63,16 +66,96 @@ outputs:
             - ${{ compiler('c') }}
             - ${{ compiler('cxx') }}
 
+
+ .- package:
+      name: ${{ python_name }}
+    build:
+      script:
+        - if: unix
+          then: build_py.sh
+        - if: win
+          then: build_py.bat
+    requirements:
+      build:
+        - ${{ compiler('c') }}
+        - ${{ stdlib('c') }}
+        - ${{ compiler('cxx') }}
+        - cmake
+        - pkg-config
+        - ninja
+        - if: build_platform != target_platform
+          then:
+            - cross-python_${{ target_platform }}
+            - python
+            # Workaround for https://github.com/conda-forge/pybind11-feedstock/pull/94#issuecomment-2033804227
+            - pybind11 <2.12.0
+            - pybind11-abi
+            - pytest
+            # Workaround for https://github.com/conda-forge/qt-main-feedstock/issues/273
+            - qt6-main
+      host:
+        - ${{ pin_subpackage(cxx_name, exact=true) }}
+        - python
+        # Workaround for https://github.com/conda-forge/pybind11-feedstock/pull/94#issuecomment-2033804227
+        - pybind11 <2.12.0
+        - pybind11-abi
+        - pytest
+      run:
+        - ${{ pin_subpackage(cxx_name, exact=true) }}
+        - python
+
+ .- package:
+      name: ${{ kpi_name }}
+    build:
+      noarch: python
+      script: ${{ PYTHON }} -m pip install --no-deps --no-build-isolation ./baf_kpi -vv
+      python:
+        entry_points:
+          - baf-kpi-analyzer = baf_kpi.main:main
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+        - wheel
+        - setuptools >=45
+        - setuptools-scm >=6.2
+        - pip
+      run:
+        - python >=${{ python_min }}
+        - numpy
+        - matplotlib-base
+        - pandas
+        - scipy
+        - h5py
+        - idyntree
+        - rich
+        - joblib
+        - argparse
+        - meshcat
+        - resolve-robotics-uri-py
+    tests:
+      - python:
+        imports:
+          - baf_kpi
+        pip_check: true
+        python_version: ${{ python_min }}.*
+     - requirements:
+         run:
+           - pip
+       script:
+         - baf-kpi-analyzer --help
+
   - package:
       name: ${{ name }}
     requirements:
       run:
         - ${{ pin_subpackage(cxx_name, exact=true) }}
+        - ${{ pin_subpackage(python_name, upper_bound='x.x.x') }}
+        - ${{ pin_subpackage(kpi_name, upper_bound='x.x.x') }}
       run_exports:
         - ${{ pin_subpackage(cxx_name, upper_bound='x.x.x') }}
     tests:
       - script:
-          - cmake-package-check BiomechanicalAnalysisFramework --targets BiomechanicalAnalysis::IK BiomechanicalAnalysis::CommonConversions BiomechanicalAnalysis::Logging
+          - cmake-package-check BiomechanicalAnalysisFramework --targets BiomechanicalAnalysis::IK BiomechanicalAnalysis::ID BiomechanicalAnalysis::CommonConversions BiomechanicalAnalysis::Logging
         requirements:
           run:
             - cmake-package-check

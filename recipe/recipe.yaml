@@ -67,7 +67,7 @@ outputs:
             - ${{ compiler('cxx') }}
 
 
- .- package:
+  - package:
       name: ${{ python_name }}
     build:
       script:
@@ -104,7 +104,7 @@ outputs:
         - ${{ pin_subpackage(cxx_name, exact=true) }}
         - python
 
- .- package:
+  - package:
       name: ${{ kpi_name }}
     build:
       noarch: python

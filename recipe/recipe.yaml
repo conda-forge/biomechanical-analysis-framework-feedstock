@@ -129,7 +129,6 @@ outputs:
         - idyntree
         - rich
         - joblib
-        - argparse
         - meshcat-python
         - resolve-robotics-uri-py
     tests:

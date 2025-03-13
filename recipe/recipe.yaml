@@ -116,6 +116,11 @@ outputs:
         entry_points:
           - baf-kpi-analyzer = baf_kpi.main:main
     requirements:
+      build:
+        - if: build_platform != target_platform
+          then:
+            - cross-python_${{ target_platform }}
+            - python  ${{ python_min }}.*
       host:
         - python ${{ python_min }}.*
         - wheel

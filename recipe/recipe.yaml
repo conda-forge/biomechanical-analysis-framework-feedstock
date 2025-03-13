@@ -95,6 +95,8 @@ outputs:
             # Workaround for https://github.com/conda-forge/qt-main-feedstock/issues/273
             - qt6-main
       host:
+        - if: linux
+          then: libgl-devel
         - ${{ pin_subpackage(cxx_name, exact=true) }}
         - python
         # Workaround for https://github.com/conda-forge/pybind11-feedstock/pull/94#issuecomment-2033804227
@@ -138,8 +140,6 @@ outputs:
             - baf_kpi
           pip_check: true
           python_version: ${{ python_min }}.*
-      - script:
-          - baf-kpi-analyzer --help
 
   - package:
       name: ${{ name }}

@@ -22,6 +22,8 @@ idyntree:
 - '13'
 libyarp:
 - 3.11.2
+spdlog:
+- '1.15'
 target_platform:
 - linux-64
 zip_keys:

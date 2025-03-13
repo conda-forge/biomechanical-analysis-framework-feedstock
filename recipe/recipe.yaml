@@ -1,7 +1,7 @@
 context:
   name: "biomechanical-analysis-framework"
   cxx_name: "libbiomechanical-analysis-framework"
-  version: "0.1.0"
+  version: "0.2.0"
 
 
 recipe:
@@ -10,7 +10,7 @@ recipe:
 
 source:
   - url: "https://github.com/ami-iit/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz"
-    sha256: "fb12cae8da4146c1bb39f7f71e5e95b43c8e8714a1065fa18dbb307c1e8f4d15"
+    sha256: "8e239abb7ae7b79e25546432e872e4a942a95b335f0a6920fe11e7c562178fd4"
     patches:
       - 65.patch
 

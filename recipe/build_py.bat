@@ -23,6 +23,7 @@ if errorlevel 1 exit 1
 
 :: Tests are not installed, so we run them during the build
 :: We run them directly via pytest so we detect if we are not compiling some required components
-cd ..
-pytest -v
-if errorlevel 1 exit 1
+:: At the moment the baf python bindings do not have any test, re-enable this if they are added
+:: cd ..
+:: pytest -v
+:: if errorlevel 1 exit 1

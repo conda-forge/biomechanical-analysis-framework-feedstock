@@ -108,6 +108,8 @@ outputs:
       name: ${{ kpi_name }}
     build:
       noarch: python
+      # This is a noarch python built as part of a non-noarch package, so we need to only built it on one platform
+      skip: not (linux and x86_64)
       script: ${{ PYTHON }} -m pip install --no-deps --no-build-isolation ./baf_kpi -vv
       python:
         entry_points:

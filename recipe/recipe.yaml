@@ -130,7 +130,7 @@ outputs:
         - rich
         - joblib
         - argparse
-        - meshcat
+        - meshcat-python
         - resolve-robotics-uri-py
     tests:
       - python:

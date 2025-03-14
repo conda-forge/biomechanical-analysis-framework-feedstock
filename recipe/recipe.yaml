@@ -62,8 +62,8 @@ outputs:
       - script:
           #  cmake-package-check does not work out of the box on linux-aarch64 due to https://github.com/conda-forge/qt-main-feedstock/issues/273
           - if: target_platform != "linux-aarch64"
-          - then:
-            - cmake-package-check BiomechanicalAnalysisFramework --targets BiomechanicalAnalysis::IK BiomechanicalAnalysis::ID BiomechanicalAnalysis::CommonConversions BiomechanicalAnalysis::Logging
+            then:
+              - cmake-package-check BiomechanicalAnalysisFramework --targets BiomechanicalAnalysis::IK BiomechanicalAnalysis::ID BiomechanicalAnalysis::CommonConversions BiomechanicalAnalysis::Logging
         requirements:
           run:
             - cmake-package-check

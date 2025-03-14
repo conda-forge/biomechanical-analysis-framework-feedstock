@@ -64,6 +64,8 @@ outputs:
           - if: target_platform != "linux-aarch64"
             then:
               - cmake-package-check BiomechanicalAnalysisFramework --targets BiomechanicalAnalysis::IK BiomechanicalAnalysis::ID BiomechanicalAnalysis::CommonConversions BiomechanicalAnalysis::Logging
+            else:
+              - echo "Skipping cmake-package-check BiomechanicalAnalysisFramework on linux-aarch64"
         requirements:
           run:
             - cmake-package-check
@@ -163,6 +165,8 @@ outputs:
           - if: target_platform != "linux-aarch64"
             then:
               - cmake-package-check BiomechanicalAnalysisFramework --targets BiomechanicalAnalysis::IK BiomechanicalAnalysis::ID BiomechanicalAnalysis::CommonConversions BiomechanicalAnalysis::Logging
+            else:
+              - echo "Skipping cmake-package-check BiomechanicalAnalysisFramework on linux-aarch64"
         requirements:
           run:
             - cmake-package-check

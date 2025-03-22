@@ -11,6 +11,12 @@ Summary: Set of C++ libraries that can be used to estimate a human kinematics an
 
 Development: https://github.com/ami-iit/biomechanical-analysis-framework
 
+This feedstock packages the biomechanical-analysis-framework set of libraries and it provides the following outputs:
+  * `libbiomechanical-analysis-framework` : Package that contains the C++ libraries.
+  * `biomechanical-analysis-framework-python` : Package that contains the Python bindings of the C++ libraries.
+  * `biomechanical-analysis-framework-kpi` : Package that contains the pure Python package containing the code to compute biomechanical KPIs.
+  * `biomechanical-analysis-framework` : Meta-package that install all the aforementioned packages.
+
 Current build status
 ====================
 
@@ -29,24 +35,143 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
+              <td>linux_64_python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64</td>
+              <td>linux_64_python3.11.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.11.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64</td>
+              <td>linux_64_python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.12.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_python3.12.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_python3.12.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.12.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.12.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_python3.12.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.12.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.12.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.12.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=25053&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/biomechanical-analysis-framework-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
@@ -63,6 +188,8 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-biomechanical--analysis--framework-green.svg)](https://anaconda.org/conda-forge/biomechanical-analysis-framework) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/biomechanical-analysis-framework.svg)](https://anaconda.org/conda-forge/biomechanical-analysis-framework) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/biomechanical-analysis-framework.svg)](https://anaconda.org/conda-forge/biomechanical-analysis-framework) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/biomechanical-analysis-framework.svg)](https://anaconda.org/conda-forge/biomechanical-analysis-framework) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-biomechanical--analysis--framework--kpi-green.svg)](https://anaconda.org/conda-forge/biomechanical-analysis-framework-kpi) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/biomechanical-analysis-framework-kpi.svg)](https://anaconda.org/conda-forge/biomechanical-analysis-framework-kpi) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/biomechanical-analysis-framework-kpi.svg)](https://anaconda.org/conda-forge/biomechanical-analysis-framework-kpi) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/biomechanical-analysis-framework-kpi.svg)](https://anaconda.org/conda-forge/biomechanical-analysis-framework-kpi) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-biomechanical--analysis--framework--python-green.svg)](https://anaconda.org/conda-forge/biomechanical-analysis-framework-python) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/biomechanical-analysis-framework-python.svg)](https://anaconda.org/conda-forge/biomechanical-analysis-framework-python) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/biomechanical-analysis-framework-python.svg)](https://anaconda.org/conda-forge/biomechanical-analysis-framework-python) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/biomechanical-analysis-framework-python.svg)](https://anaconda.org/conda-forge/biomechanical-analysis-framework-python) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libbiomechanical--analysis--framework-green.svg)](https://anaconda.org/conda-forge/libbiomechanical-analysis-framework) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libbiomechanical-analysis-framework.svg)](https://anaconda.org/conda-forge/libbiomechanical-analysis-framework) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libbiomechanical-analysis-framework.svg)](https://anaconda.org/conda-forge/libbiomechanical-analysis-framework) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libbiomechanical-analysis-framework.svg)](https://anaconda.org/conda-forge/libbiomechanical-analysis-framework) |
 
 Installing biomechanical-analysis-framework
@@ -75,16 +202,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `biomechanical-analysis-framework, libbiomechanical-analysis-framework` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `biomechanical-analysis-framework, biomechanical-analysis-framework-kpi, biomechanical-analysis-framework-python, libbiomechanical-analysis-framework` can be installed with `conda`:
 
 ```
-conda install biomechanical-analysis-framework libbiomechanical-analysis-framework
+conda install biomechanical-analysis-framework biomechanical-analysis-framework-kpi biomechanical-analysis-framework-python libbiomechanical-analysis-framework
 ```
 
 or with `mamba`:
 
 ```
-mamba install biomechanical-analysis-framework libbiomechanical-analysis-framework
+mamba install biomechanical-analysis-framework biomechanical-analysis-framework-kpi biomechanical-analysis-framework-python libbiomechanical-analysis-framework
 ```
 
 It is possible to list all of the versions of `biomechanical-analysis-framework` available on your platform with `conda`:

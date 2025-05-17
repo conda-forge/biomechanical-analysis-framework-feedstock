@@ -7,11 +7,6 @@ fi
 
 CXXFLAGS="${CXXFLAGS} -DPYBIND11_DETAILED_ERROR_MESSAGES"
 
-# Workaround for https://github.com/conda-forge/qt-main-feedstock/issues/273
-if [[ "$build_platform" != "$target_platform" ]]; then
-    export QT_HOST_PATH="$BUILD_PREFIX"
-fi
-
 cd ${SRC_DIR}/bindings
 
 rm -rf build

@@ -3,7 +3,7 @@ context:
   cxx_name: "libbiomechanical-analysis-framework"
   python_name: "biomechanical-analysis-framework-python"
   kpi_name: "biomechanical-analysis-framework-kpi"
-  version: "0.2.0"
+  version: "0.2.1"
 
 recipe:
   name: ${{ name }}
@@ -12,12 +12,9 @@ recipe:
 source:
   - url: "https://github.com/ami-iit/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz"
     sha256: "8e239abb7ae7b79e25546432e872e4a942a95b335f0a6920fe11e7c562178fd4"
-    patches:
-      - 68.patch
-      - 79.patch
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - package:

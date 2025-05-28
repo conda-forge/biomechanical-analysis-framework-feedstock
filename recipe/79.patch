@@ -1,0 +1,111 @@
+From a2f2e4b22cd3942aef038fa227603b8a3758dbb1 Mon Sep 17 00:00:00 2001
+From: Davide <davidegorbani@gmail.com>
+Date: Wed, 28 May 2025 10:25:24 +0200
+Subject: [PATCH] fixed IK test
+
+---
+ src/IK/tests/HumanIKTest.cpp   |  5 +--
+ src/IK/tests/configTestIK.toml | 62 ++--------------------------------
+ 2 files changed, 3 insertions(+), 64 deletions(-)
+
+diff --git a/src/IK/tests/HumanIKTest.cpp b/src/IK/tests/HumanIKTest.cpp
+index a7389f7..c894134 100644
+--- a/src/IK/tests/HumanIKTest.cpp
++++ b/src/IK/tests/HumanIKTest.cpp
+@@ -23,7 +23,6 @@ TEST_CASE("InverseKinematics test")
+     kinDyn->loadRobotModel(model);
+     auto paramHandler = std::make_shared<BipedalLocomotion::ParametersHandler::TomlImplementation>();
+     IParametersHandler::shared_ptr handler = paramHandler;
+-    std::cout << "configPath = " << getConfigPath() + "/configTestIK.toml" << std::endl;
+     REQUIRE(paramHandler->setFromFile(getConfigPath() + "/configTestIK.toml"));
+ 
+     /* CREATE THE PARAMETERS FOR THE JOINT_REG TASK*/
+@@ -74,9 +73,7 @@ TEST_CASE("InverseKinematics test")
+     desiredDirection << 1.0, 2.0, 3.0;
+ 
+     std::unordered_map<int, BiomechanicalAnalysis::IK::nodeData> mapNodeData;
+-    mapNodeData[11].I_R_IMU.setIdentity();
+-    mapNodeData[6].I_R_IMU = I_R_IMU;
+-    mapNodeData[6].I_omega_IMU = I_omega_IMU;
++    mapNodeData[6].I_R_IMU.setIdentity();
+     mapNodeData[7].I_R_IMU = I_R_IMU;
+     mapNodeData[7].I_omega_IMU = I_omega_IMU;
+ 
+diff --git a/src/IK/tests/configTestIK.toml b/src/IK/tests/configTestIK.toml
+index 80a0f78..ac5faf3 100644
+--- a/src/IK/tests/configTestIK.toml
++++ b/src/IK/tests/configTestIK.toml
+@@ -1,8 +1,6 @@
+ tasks = [
+-    "PELVIS_TASK", "T8_TASK", "RIGHT_UPPER_ARM_TASK", "RIGHT_FORE_ARM_TASK", 
+-    "LEFT_UPPER_ARM_TASK", "LEFT_FORE_ARM_TASK", "RIGHT_UPPER_LEG_TASK", 
+-    "RIGHT_LOWER_LEG_TASK", "LEFT_UPPER_LEG_TASK", "LEFT_LOWER_LEG_TASK", 
+-    "GRAVITY_TASK_1", "FLOOR_CONTACT_TASK_1", "JOINT_LIMITS_TASK", "JOINT_REG_TASK", "JOINT_VEL_LIMITS_TASK"
++    "PELVIS_TASK", "T8_TASK", "RIGHT_UPPER_ARM_TASK", "GRAVITY_TASK_1", 
++    "FLOOR_CONTACT_TASK_1", "JOINT_LIMITS_TASK", "JOINT_REG_TASK", "JOINT_VEL_LIMITS_TASK"
+ ]
+ 
+ [IK]
+@@ -33,62 +31,6 @@ kp_angular = 1.0
+ node_number = 7
+ weight = [1.0, 1.0, 1.0]
+ 
+-[RIGHT_FORE_ARM_TASK]
+-type = "SO3Task"
+-robot_velocity_variable_name = "robot_velocity"
+-frame_name = "link3"
+-kp_angular = 1.0
+-node_number = 8
+-weight = [1.0, 1.0, 1.0]
+-
+-[LEFT_UPPER_ARM_TASK]
+-type = "SO3Task"
+-robot_velocity_variable_name = "robot_velocity"
+-frame_name = "link4"
+-kp_angular = 1.0
+-node_number = 5
+-weight = [1.0, 1.0, 1.0]
+-
+-[LEFT_FORE_ARM_TASK]
+-type = "SO3Task"
+-robot_velocity_variable_name = "robot_velocity"
+-frame_name = "link5"
+-kp_angular = 1.0
+-node_number = 4
+-weight = [1.0, 1.0, 1.0]
+-
+-[RIGHT_UPPER_LEG_TASK]
+-type = "SO3Task"
+-robot_velocity_variable_name = "robot_velocity"
+-frame_name = "link6"
+-kp_angular = 1.0
+-node_number = 11
+-weight = [1.0, 1.0, 1.0]
+-
+-[RIGHT_LOWER_LEG_TASK]
+-type = "SO3Task"
+-robot_velocity_variable_name = "robot_velocity"
+-frame_name = "link7"
+-kp_angular = 1.0
+-node_number = 12
+-weight = [1.0, 1.0, 1.0]
+-
+-[LEFT_UPPER_LEG_TASK]
+-type = "SO3Task"
+-robot_velocity_variable_name = "robot_velocity"
+-frame_name = "link8"
+-kp_angular = 1.0
+-node_number = 9
+-weight = [1.0, 1.0, 1.0]
+-
+-[LEFT_LOWER_LEG_TASK]
+-type = "SO3Task"
+-robot_velocity_variable_name = "robot_velocity"
+-frame_name = "link9"
+-kp_angular = 1.0
+-node_number = 10
+-weight = [1.0, 1.0, 1.0]
+-
+ [GRAVITY_TASK_1]
+ type = "GravityTask"
+ robot_velocity_variable_name = "robot_velocity"

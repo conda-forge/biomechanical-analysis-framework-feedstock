@@ -16,7 +16,7 @@ source:
       - 81.patch
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - package:
@@ -46,7 +46,7 @@ outputs:
         - libbipedal-locomotion-framework
         - catch2
       run_exports:
-         - ${{ pin_subpackage(cxx_name, upper_bound='x.x.x') }}
+        - ${{ pin_subpackage(cxx_name, upper_bound='x.x.x') }}
     tests:
       - package_contents:
           lib:

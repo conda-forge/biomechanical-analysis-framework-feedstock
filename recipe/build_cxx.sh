@@ -15,5 +15,6 @@ cmake --build . --config Release
 cmake --build . --config Release --target install
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR:-}" != "" ]]; then
-  ctest --output-on-failure -C Release
+  # HumanIK skipped due to https://github.com/ami-iit/biomechanical-analysis-framework/issues/82, re-enable once https://github.com/ami-iit/biomechanical-analysis-framework/pull/84 is relaesed
+  ctest --output-on-failure -C Release -E "HumanIK"
 fi

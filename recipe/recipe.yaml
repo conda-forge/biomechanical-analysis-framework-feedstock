@@ -12,8 +12,6 @@ recipe:
 source:
   - url: "https://github.com/ami-iit/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz"
     sha256: "1c9571be2d29a1315ae5739c2310fe86d80bfbb5b906b39db1ecc1ed522a0d8f"
-    patches:
-      - 81.patch
 
 build:
   number: 1

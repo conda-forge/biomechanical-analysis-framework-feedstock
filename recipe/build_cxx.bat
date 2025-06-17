@@ -19,6 +19,5 @@ cmake --build . --config Release --target install
 if errorlevel 1 exit 1
 
 :: Test.
-:: HumanIK skipped due to https://github.com/ami-iit/biomechanical-analysis-framework/issues/82, re-enable once https://github.com/ami-iit/biomechanical-analysis-framework/pull/84 is relaesed
-ctest --output-on-failure -C Release -E "HumanIK"
+ctest --output-on-failure -C Release
 if errorlevel 1 exit 1

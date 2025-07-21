@@ -1,4 +1,4 @@
-fcontext:
+context:
   name: "biomechanical-analysis-framework"
   cxx_name: "libbiomechanical-analysis-framework"
   python_name: "biomechanical-analysis-framework-python"

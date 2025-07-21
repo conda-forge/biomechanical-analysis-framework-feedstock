@@ -1,4 +1,4 @@
-context:
+fcontext:
   name: "biomechanical-analysis-framework"
   cxx_name: "libbiomechanical-analysis-framework"
   python_name: "biomechanical-analysis-framework-python"
@@ -82,8 +82,7 @@ outputs:
           then:
             - cross-python_${{ target_platform }}
             - python
-            # Workaround for https://github.com/conda-forge/pybind11-feedstock/pull/94#issuecomment-2033804227
-            - pybind11 <2.12.0
+            - pybind11
             - pybind11-abi
             - pytest
             # Workaround for https://github.com/conda-forge/qt-main-feedstock/issues/273
@@ -93,8 +92,7 @@ outputs:
           then: libgl-devel
         - ${{ pin_subpackage(cxx_name, exact=true) }}
         - python
-        # Workaround for https://github.com/conda-forge/pybind11-feedstock/pull/94#issuecomment-2033804227
-        - pybind11 <2.12.0
+        - pybind11
         - pybind11-abi
         - pytest
       run:

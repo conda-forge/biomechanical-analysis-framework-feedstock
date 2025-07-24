@@ -14,7 +14,7 @@ source:
     sha256: "1c9571be2d29a1315ae5739c2310fe86d80bfbb5b906b39db1ecc1ed522a0d8f"
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - package:
@@ -82,8 +82,7 @@ outputs:
           then:
             - cross-python_${{ target_platform }}
             - python
-            # Workaround for https://github.com/conda-forge/pybind11-feedstock/pull/94#issuecomment-2033804227
-            - pybind11 <2.12.0
+            - pybind11
             - pybind11-abi
             - pytest
             # Workaround for https://github.com/conda-forge/qt-main-feedstock/issues/273
@@ -93,8 +92,7 @@ outputs:
           then: libgl-devel
         - ${{ pin_subpackage(cxx_name, exact=true) }}
         - python
-        # Workaround for https://github.com/conda-forge/pybind11-feedstock/pull/94#issuecomment-2033804227
-        - pybind11 <2.12.0
+        - pybind11
         - pybind11-abi
         - pytest
       run:

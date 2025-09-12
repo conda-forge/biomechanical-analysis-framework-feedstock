@@ -21,7 +21,7 @@ docker_image:
 idyntree:
 - '13'
 libyarp:
-- 3.12.0
+- 3.12.1
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -32,7 +32,7 @@ python:
 - 3.10.* *_cpython
 - 3.11.* *_cpython
 - 3.12.* *_cpython
-- 3.9.* *_cpython
+- 3.13.* *_cp313
 spdlog:
 - '1.15'
 target_platform:

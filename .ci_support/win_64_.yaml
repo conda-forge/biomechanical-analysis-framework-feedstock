@@ -9,7 +9,7 @@ channel_targets:
 cxx_compiler:
 - vs2022
 idyntree:
-- '13'
+- '14'
 libyarp:
 - 3.12.1
 pin_run_as_build:

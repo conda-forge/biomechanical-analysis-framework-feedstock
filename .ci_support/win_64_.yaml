@@ -11,7 +11,7 @@ cxx_compiler:
 idyntree:
 - '14'
 libyarp:
-- 3.12.1
+- 3.12.2
 pin_run_as_build:
   python:
     min_pin: x.x

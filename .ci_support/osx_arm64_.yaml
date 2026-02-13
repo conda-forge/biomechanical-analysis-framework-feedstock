@@ -19,7 +19,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '19'
 idyntree:
-- '14'
+- '15'
 libyarp:
 - 3.12.2
 macos_machine:

@@ -14,7 +14,7 @@ source:
     sha256: "d6085178a633c06a5672caf7d78bbd1798378d8481446fda6af1325dbde6ef6e"
 
 build:
-  number: 5
+  number: 6
 
 outputs:
   - package:
@@ -43,6 +43,7 @@ outputs:
         - libyarp
         - libbipedal-locomotion-framework
         - catch2
+        - eigen-abi-devel
       run_exports:
         - ${{ pin_subpackage(cxx_name, upper_bound='x.x.x') }}
     tests:
@@ -95,6 +96,7 @@ outputs:
         - pybind11
         - pybind11-abi
         - pytest
+        - eigen-abi-devel
       run:
         - ${{ pin_subpackage(cxx_name, exact=true) }}
         - python
